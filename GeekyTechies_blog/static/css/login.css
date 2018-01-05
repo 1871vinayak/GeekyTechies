@@ -1,0 +1,19 @@
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+.leftcolumn {
+    float: left;
+    width: 57%;
+
+}
+.card {
+     background-color: white;
+     padding: 40px;
+     margin-top: 5px;
+}

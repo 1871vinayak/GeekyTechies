@@ -1,24 +1,42 @@
 {% extends "blog/base.html" %}
+{% load staticfiles %}
 
 {% block content %}
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
 
-    <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-        <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-        </table>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <div class="imgcontainer">
+     <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png" alt="Avatar" class="avatar">
+   </div>
+      <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
 
-        <input type="submit" value="login" />
-        <input type="hidden" name="next" value="{{ next }}" />
-    </form>
-{% endblock %}
+          <table>
+          <tr>
+              <td>{{ form.username.label_tag }}</td>
+              <td>{{ form.username }}</td>
+          </tr>
+          <tr>
+              <td>{{ form.password.label_tag }}</td>
+              <td>{{ form.password }}</td>
+          </tr>
+          </table>
+
+
+          <input type="submit" value="login" />
+          <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+  {% endblock %}
+      </form>
+    </div>
+  </div>
+</body>

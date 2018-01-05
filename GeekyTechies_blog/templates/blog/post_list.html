@@ -6,8 +6,22 @@
             <div class="date">
                 {{ post.published_date }}
             </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+        <div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <div class="sidebar-box">
+        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p class="read-more"><a href="{% url 'post_detail' pk=post.pk %}" class="button">Read More</a></p>
+      </div>
+
+    </div>
+  </div>
         </div>
+
+
+        </div>
+
     {% endfor %}
 {% endblock %}
